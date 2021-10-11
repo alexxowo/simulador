@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const Slider = ({title, max, multiplier, type}) => {
+const Slider = ({title, max, multiplier, type, onChangeValue}) => {
     
   const [value, setValue] = useState(0)
   const [consumeValue, setConsumeValue] = useState(0)
@@ -8,6 +8,7 @@ const Slider = ({title, max, multiplier, type}) => {
   const handleChangeValue = (e) => {
     setValue(e.target.value);
     setConsumeValue(e.target.value)
+    onChangeValue(e.target.value)
   }
 
   return (
